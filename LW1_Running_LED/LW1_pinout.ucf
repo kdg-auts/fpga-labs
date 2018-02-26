@@ -1,0 +1,8 @@
+# GLOBAL CLK & button for RST 
+NET "CLK" LOC = P184;
+NET "RST" LOC = P101;
+# on-board LEDs
+NET "led<0>" LOC = P68 | IOSTANDARD = LVCMOS33; # marked on board as L4
+NET "led<1>" LOC = P78 | IOSTANDARD = LVCMOS33; # marked on board as L3
+NET "led<2>" LOC = P83 | IOSTANDARD = LVCMOS33; # marked on board as L2
+NET "led<3>" LOC = P89 | IOSTANDARD = LVCMOS33; # marked on board as L1
