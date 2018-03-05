@@ -1,0 +1,19 @@
+## Core3S500E ##########################################################
+# GLOBAL CLK & button for RST 
+NET "CLK" LOC = P184;
+NET "RST" LOC = P101;
+# on-board LEDs
+NET "LED<0>" LOC = P68 | IOSTANDARD = LVCMOS33; # marked on board as L4
+NET "LED<1>" LOC = P78 | IOSTANDARD = LVCMOS33; # marked on board as L3
+NET "LED<2>" LOC = P83 | IOSTANDARD = LVCMOS33; # marked on board as L2
+NET "LED<3>" LOC = P89 | IOSTANDARD = LVCMOS33; # marked on board as L1
+
+## DVK600 ##############################################################
+# buzzer pin 
+NET "BUZZ"  LOC = P123;
+#joystick pins 
+NET "J_DWN"  LOC = P116;
+NET "J_UP"    LOC = P122;
+#NET "_left_"  LOC = P119;
+#NET "_right_" LOC = P120;
+NET "J_PRESS" LOC = P115;

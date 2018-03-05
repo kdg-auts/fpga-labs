@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/KARAMAN/APPDATA/XILINX/3S500E_Demo/LW2_joy_and_buzz/LW2_TB_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="lw2_tb" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/lw2_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lw2_tb/nrst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nrst</obj_property>
+      <obj_property name="ObjectShortName">nrst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lw2_tb/nj_up" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nj_up</obj_property>
+      <obj_property name="ObjectShortName">nj_up</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lw2_tb/nj_dwn" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nj_dwn</obj_property>
+      <obj_property name="ObjectShortName">nj_dwn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lw2_tb/nj_press" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nj_press</obj_property>
+      <obj_property name="ObjectShortName">nj_press</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lw2_tb/nbuzz" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">nbuzz</obj_property>
+      <obj_property name="ObjectShortName">nbuzz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lw2_tb/nled" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">nled[3:0]</obj_property>
+      <obj_property name="ObjectShortName">nled[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider11" type="divider">
+      <obj_property name="label">New Divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="group12" type="group">
+      <obj_property name="label">CLK_DIV</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/lw2_tb/uut/CLK_DIV/rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/CLK_DIV/en" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/CLK_DIV/clk_count" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">clk_count</obj_property>
+         <obj_property name="ObjectShortName">clk_count</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group13" type="group">
+      <obj_property name="label">LED_DRV</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/lw2_tb/uut/LED_DRV/rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/LED_DRV/en" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/LED_DRV/count_up" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">count_up</obj_property>
+         <obj_property name="ObjectShortName">count_up</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/LED_DRV/count_down" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">count_down</obj_property>
+         <obj_property name="ObjectShortName">count_down</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/LED_DRV/initial" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">initial</obj_property>
+         <obj_property name="ObjectShortName">initial</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/LED_DRV/led" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">led[3:0]</obj_property>
+         <obj_property name="ObjectShortName">led[3:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/LED_DRV/buzz_t" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">buzz_t</obj_property>
+         <obj_property name="ObjectShortName">buzz_t</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/LED_DRV/led_state" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">led_state</obj_property>
+         <obj_property name="ObjectShortName">led_state</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group14" type="group">
+      <obj_property name="label">BUZZ_DRV</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/lw2_tb/uut/BUZZ_DRV/en" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/BUZZ_DRV/buzz" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">buzz</obj_property>
+         <obj_property name="ObjectShortName">buzz</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lw2_tb/uut/BUZZ_DRV/clk_count" type="other" db_ref_id="1">
+         <obj_property name="ElementShortName">clk_count</obj_property>
+         <obj_property name="ObjectShortName">clk_count</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
