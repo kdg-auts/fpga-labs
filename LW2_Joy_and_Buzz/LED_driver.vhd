@@ -28,7 +28,7 @@ begin
 		if clk'event and clk = '1' then
 			if RST ='1' then -- reset events
 				led_state <= 5;
-				LED <= "1111";
+				--LED <= "1111";
 			elsif EN ='1' then -- normal operation
 				-- define led state when buttons pressed
 				if count_up = '1' and count_down = '0' and initial = '0' then
@@ -43,22 +43,52 @@ begin
 					led_state <= 5;
 				end if;
 				-- led enlighting based on led_state
-				case led_state is
-					when 0 => LED <= "0000";
-					when 1 => LED <= "0001";
-					when 2 => LED <= "0010";
-					when 3 => LED <= "0011";
-					when 4 => LED <= "0100";
-					when 5 => LED <= "0101";
-					when 6 => LED <= "0110";
-					when 7 => LED <= "0111";
-					when 8 => LED <= "1000";
-					when 9 => LED <= "1001";
-					when others => LED <= "1111";
-				end case;
+--				case led_state is
+--					when 0 => LED <= "0000";
+--					when 1 => LED <= "0001";
+--					when 2 => LED <= "0010";
+--					when 3 => LED <= "0011";
+--					when 4 => LED <= "0100";
+--					when 5 => LED <= "0101";
+--					when 6 => LED <= "0110";
+--					when 7 => LED <= "0111";
+--					when 8 => LED <= "1000";
+--					when 9 => LED <= "1001";
+--					when others => LED <= "1111";
+--				end case;
 			end if; -- normal operation
 		end if; -- clock
 	end process;
+	
+--	LED <= "0000" when led_state = 0 else
+--	       "0001" when led_state = 1 else
+--			 "0010" when led_state = 2 else
+--			 "0011" when led_state = 3 else
+--			 "0100" when led_state = 4 else
+--			 "0101" when led_state = 5 else
+--			 "0110" when led_state = 6 else
+--			 "0111" when led_state = 7 else
+--			 "1000" when led_state = 8 else
+--			 "1001" when led_state = 9 else
+--			 "1111";
+			 
+	with led_state select
+		LED <= "0000" when 0,
+		       "0001" when 1,
+				 "0010" when 2,
+				 "0011" when 3,
+				 "0100" when 4,
+				 "0101" when 5,
+				 "0110" when 6,
+				 "0111" when 7,
+				 "1000" when 8,
+				 "1001" when 9,
+				 "1111" when others;
+				 
+				 
+				 
+				 
+				 
 
 	buzz_driving: process (CLK, EN)
 	begin

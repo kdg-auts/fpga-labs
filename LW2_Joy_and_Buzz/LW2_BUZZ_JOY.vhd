@@ -10,7 +10,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity LW2_BUZZ_JOY is
 	generic (
 		BUZZ_PERIOD_g : natural := 50000000; -- 50M = 1 sec
-		TICK_COUNT_g : natural := 1000000 -- 10M = 0.2 sec
+		TICK_COUNT_g : natural := 20000000 -- 20M = 0.4 sec
 	);
 	port ( 
 		CLK : in  STD_LOGIC;
