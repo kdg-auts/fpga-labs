@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/xilinx_projects/LW3_SEC_TIM/TB_COUNT_TIMER_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="tb_count_timer" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/tb_count_timer/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/tic" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tic</obj_property>
+      <obj_property name="ObjectShortName">tic</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/sec" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sec</obj_property>
+      <obj_property name="ObjectShortName">sec</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/tim" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tim</obj_property>
+      <obj_property name="ObjectShortName">tim</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/stop" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">stop</obj_property>
+      <obj_property name="ObjectShortName">stop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/setup" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">setup[3:0]</obj_property>
+      <obj_property name="ObjectShortName">setup[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/buzz" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">buzz</obj_property>
+      <obj_property name="ObjectShortName">buzz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/sec_m" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sec_m</obj_property>
+      <obj_property name="ObjectShortName">sec_m</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/tim_m" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tim_m</obj_property>
+      <obj_property name="ObjectShortName">tim_m</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/m_h" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">m_h[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_h[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/m_l" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">m_l[3:0]</obj_property>
+      <obj_property name="ObjectShortName">m_l[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/s_h" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s_h[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_h[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/s_l" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s_l[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_l[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/uut/ct_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ct_state</obj_property>
+      <obj_property name="ObjectShortName">ct_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_count_timer/uut/mode" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">mode</obj_property>
+      <obj_property name="ObjectShortName">mode</obj_property>
+   </wvobject>
+</wave_config>

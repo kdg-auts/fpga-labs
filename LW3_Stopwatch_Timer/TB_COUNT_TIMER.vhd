@@ -1,36 +1,12 @@
 --------------------------------------------------------------------------------
--- Company: 
--- Engineer:
---
--- Create Date:   11:03:00 04/27/2018
--- Design Name:   
--- Module Name:   C:/xilinx_projects/LW3_SEC_TIM/TB_COUNT_TIMER.vhd
--- Project Name:  LW3_SEC_TIM
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: COUNT_TIMER
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
+-- Project Name: LW3 - Stopwatch/Timer using 8-buttons keyboard and 7-segment display
+-- Module Name: TB_COUNT_TIMER
+-- Module Type: testbench
+-- Unit Under Test: COUNT_TIMER
+-- Create Date: 11:03:00 04/27/2018
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
- 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
  
 ENTITY TB_COUNT_TIMER IS
 END TB_COUNT_TIMER;
@@ -87,24 +63,25 @@ ARCHITECTURE behavior OF TB_COUNT_TIMER IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: COUNT_TIMER PORT MAP (
-          CLK => CLK,
-          RST => RST,
-          EN => EN,
-          TIC => TIC,
-          SEC => SEC,
-          TIM => TIM,
-          START => START,
-          STOP => STOP,
-          SETUP => SETUP,
-          BUZZ => BUZZ,
-          SEC_M => SEC_M,
-          TIM_M => TIM_M,
-          M_H => M_H,
-          M_L => M_L,
-          S_H => S_H,
-          S_L => S_L
-        );
+   uut: COUNT_TIMER 
+	PORT MAP (
+		CLK => CLK,
+		RST => RST,
+		EN => EN,
+		TIC => TIC,
+		SEC => SEC,
+		TIM => TIM,
+		START => START,
+		STOP => STOP,
+		SETUP => SETUP,
+		BUZZ => BUZZ,
+		SEC_M => SEC_M,
+		TIM_M => TIM_M,
+		M_H => M_H,
+		M_L => M_L,
+		S_H => S_H,
+		S_L => S_L
+   );
 
    -- Clock process definitions
    CLK_process :process
@@ -115,7 +92,7 @@ BEGIN
 		wait for CLK_period/2;
    end process;
  
- TIC_process :process
+	TIC_process :process
    begin
 		TIC <= '0';
 		wait for CLK_period*9;
@@ -134,35 +111,87 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin	
+		-- reset section
 		RST <='1';
-		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
+      wait for 100 ns;	-- hold reset state for 100 ns
 		RST <='0';
-      wait for CLK_period*10;
+      wait for CLK_period*10; -- cooldown pause
 
-      -- insert stimulus here 
-		SEC <= '1'; --secundamer
+      -- тестирование секундомера 
+		SEC <= '1'; -- переключение в режим "секундомер" (имитация нажатия кнопки)
 		wait for 50 ns;
 		SEC <= '0';
 		wait for 50 ns;
-		START <= '1';
+		START <= '1'; -- запуск отсчета секунд (имитация нажатия кнопки)
 		wait for 50 ns;
 		START <= '0';
-		wait for CLK_period*100;
-		STOP <= '1';
+		wait for CLK_period*100; -- ожидание 10 отсчетов
+		STOP <= '1'; -- остановка отсчета (имитация нажатия кнопки)
 		wait for 150 ns;
 		STOP <= '0';
 		wait for 50 ns;
 		
-		TIM <= '1'; --timer
+		-- тестирование таймера
+		TIM <= '1'; -- переключение в режим "таймер" (имитация нажатия кнопки)
 		wait for 50 ns;
 		TIM <= '0';
 		wait for 50 ns;
-		START <= '1';
+		START <= '1'; -- запуск таймера (имитация нажатия кнопки); начальное состояние осталось от работы секундомера (10 секунд)
 		wait for 50 ns;
 		START <= '0';
+		wait for CLK_period*125;
+		
+		--wait until BUZZ='1';
+		--wait for CLK_period*10;
+		
+		SETUP(0)<='1';
 		wait for CLK_period*100;
+		SETUP(0)<='0';
+		wait for CLK_period*20;
+		
+		SETUP(1)<='1';
+		wait for CLK_period*100;
+		SETUP(1)<='0';
+		wait for CLK_period*20;
+		
+		SETUP(2)<='1';
+		wait for CLK_period*100;
+		SETUP(2)<='0';
+		wait for CLK_period*20;
+		
+		SETUP(3)<='1';
+		wait for CLK_period*100;
+		SETUP(3)<='0';
+		wait for CLK_period*20;
+		
+--		for i in 0 to 9 loop
+--		SETUP(0)<='1';
+--		wait for 50 ns;
+--		SETUP(0)<='0';
+--		wait for 150 ns;
+--		end loop;
+--		
+--		for i in 0 to 5 loop
+--		SETUP(1)<='1';
+--		wait for 50 ns;
+--		SETUP(1)<='0';
+--		wait for 150 ns;
+--		end loop;
+--		
+--		for i in 0 to 9 loop
+--		SETUP(2)<='1';
+--		wait for 50 ns;
+--		SETUP(2)<='0';
+--		wait for 150 ns;
+--		end loop;
+--		
+--		for i in 0 to 5 loop
+--		SETUP(3)<='1';
+--		wait for 50 ns;
+--		SETUP(3)<='0';
+--		wait for 150 ns;
+--		end loop;
+		
 		
       wait;
    end process;

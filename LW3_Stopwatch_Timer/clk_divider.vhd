@@ -1,7 +1,8 @@
 ----------------------------------------------------------------------------------
--- Project Name: LW2 - LED control with joystick and buzzer
+-- Project Name: LW3 - Stopwatch/Timer using 8-buttons keyboard and 7-segment display
 -- Module Name: clk_divider - clk_divider_arch
 -- Create Date: 11:04:24 02/16/2018 
+-- Description: reused from LW2 with upgrade
 ----------------------------------------------------------------------------------
 
 library IEEE;

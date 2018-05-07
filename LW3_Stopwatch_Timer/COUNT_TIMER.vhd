@@ -1,35 +1,13 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    11:21:12 04/06/2018 
--- Design Name: 
--- Module Name:    COUNT_TIMER - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Project Name: LW3 - Stopwatch/Timer using 8-buttons keyboard and 7-segment display
+-- Module Name: COUNT_TIMER - Behavioral
+-- Create Date: 11:21:12 04/06/2018 
+-- Description: Stopwatch/Timer core FSM
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity COUNT_TIMER is
     Port ( CLK : in  STD_LOGIC;
@@ -60,6 +38,7 @@ architecture COUNT_TIMER_ARCH of COUNT_TIMER is
 	signal M_H_s : STD_LOGIC_VECTOR (3 downto 0);
 
 begin
+	
 	state_machine : process (CLK,RST)
 		
 		begin
@@ -73,7 +52,8 @@ begin
 				BUZZ <= '0';
 			elsif CLK'event and CLK='1' then
 				if EN='1' then
-					BUZZ<='0';
+					BUZZ<='0'; -- reset BUZZ strobe
+
 					case CT_State is
 						
 						when IDLE => -- prepare state
@@ -113,16 +93,16 @@ begin
 										M_H_s<=M_H_s+1;
 									end if;
 								end if;
-							elsif START='1' then -- button START pressed
+							elsif START='1' then -- button START pressed, begin counting
 								CT_State<=COUNT;
 							end if;
 						
-						when COUNT=>
-							if TIC='1' then
+						when COUNT => -- working state
+							if TIC='1' then -- work only with 1 sec pause
 								if MODE=0 then -- count mode
-									if STOP='1' then
+									if STOP='1' then -- button STOP is pressed
 										CT_State<=IDLE;
-									elsif S_L_s<"1001" then
+									elsif S_L_s<"1001" then -- increment secs and mins until owerflow
 										S_L_s<=S_L_s+1;
 									elsif S_H_s<"0101" then
 										S_L_s <= "0000";
@@ -133,7 +113,7 @@ begin
 									elsif M_H_s<"0101" then
 										M_L_s <= "0000";
 										M_H_s<=M_H_s+1;
-									else 
+									else -- owerflow reached, play sound and goto IDLE
 										M_H_s<=(others=>'0');
 										M_L_s<=(others=>'0');
 										S_H_s<=(others=>'0');
@@ -141,10 +121,10 @@ begin
 										BUZZ<='1';
 										CT_State<=IDLE;
 									end if;
-								elsif MODE=1 then 
-									if STOP='1' then
+								elsif MODE=1 then -- timer mode
+									if STOP='1' then -- button STOP is pressed
 										CT_State<=IDLE;
-									elsif S_L_s>"0000" then
+									elsif S_L_s>"0000" then -- decrement secs and mins until all zero
 										S_L_s<=S_L_s-1;
 									elsif S_H_s>"0000" then
 										S_L_s <= "1001";
@@ -155,7 +135,7 @@ begin
 									elsif M_H_s>"0000" then
 										M_L_s <= "1001";
 										M_H_s<=M_H_s-1;
-									else 
+									else -- timer finished counting
 										M_H_s<=(others=>'0');
 										M_L_s<=(others=>'0');
 										S_H_s<=(others=>'0');
@@ -172,10 +152,14 @@ begin
 			end if;
 		end process;
 
+	-- output seconds and minutes
 	S_L <= S_L_s;
 	S_H <= S_H_s;
 	M_L <= M_L_s;
 	M_H <= M_H_s;
+	-- show current mode on LEDs
+	SEC_M <= '1' when MODE=0 else '0';
+	TIM_M <= '1' when MODE=1 else '0';
 		
 end COUNT_TIMER_ARCH;
 

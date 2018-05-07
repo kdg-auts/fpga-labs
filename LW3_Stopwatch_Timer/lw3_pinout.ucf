@@ -1,0 +1,46 @@
+############################################# Core3S500E #############################################
+# GLOBAL CLK & button for RST 
+NET "CLK" LOC = "P184";
+NET "RST" LOC = "P101"; # button to GPIO, but only as input capable
+# on-board LEDs
+NET "SEC_LED" LOC =" P68"; # marked on board as L4
+NET "TIM_LED" LOC = "P78"; # marked on board as L3
+#NET "led[2]" LOC = "P83"; # marked on board as L2
+#NET "led[3]" LOC = "P89"; # marked on board as L1
+
+############################################### DVK600 ##############################################
+# on-board resources 
+NET "BUZZ"  LOC = "p123"; # busser (toggle on/off by jumper), same as "8I/Os_2_6"
+
+# GPIO PORTS
+### General rules:
+### GPIO lines could be configured either as inputs or outputs
+### 
+
+#Port 8I/Os_1
+NET "8I/Os_1_1"  LOC = "p75";
+NET "8I/Os_1_2"  LOC = "p76";
+NET "8I/Os_1_3"  LOC = "p69";
+NET "8I/Os_1_4"  LOC = "p74";
+NET "8I/Os_1_5"  LOC = "p64"; # same as "LCD12864_K"
+NET "8I/Os_1_6"  LOC = "p65"; # same as "LCD12864_A"
+NET "8I/Os_1_7"  LOC = "p62";
+NET "8I/Os_1_8"  LOC = "p63"; # same as "LCD12864_RST"
+
+#16I/Os_2
+NET "16I/Os_2_01"  LOC = "p119"; # same as "joystick-left"
+NET "16I/Os_2_02"  LOC = "p116"; # same as "joystick-down"
+NET "16I/Os_2_03"  LOC = "p115"; # same as "joystick-press"
+NET "16I/Os_2_04"  LOC = "p113";
+NET "16I/Os_2_05"  LOC = "p112";
+NET "16I/Os_2_06"  LOC = "p109";
+NET "16I/Os_2_07"  LOC = "p108";
+NET "16I/Os_2_08"  LOC = "p107";
+NET "16I/Os_2_09"  LOC = "p106";
+NET "16I/Os_2_10"  LOC = "p102";
+NET "16I/Os_2_11"  LOC = "p100";
+NET "16I/Os_2_12"  LOC = "p99";
+NET "16I/Os_2_13"  LOC = "p98";
+NET "16I/Os_2_14"  LOC = "p97";
+NET "16I/Os_2_15"  LOC = "p96";
+NET "16I/Os_2_16"  LOC = "p94";
