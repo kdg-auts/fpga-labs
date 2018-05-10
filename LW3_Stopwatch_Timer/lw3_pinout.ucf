@@ -18,29 +18,29 @@ NET "BUZZ"  LOC = "p123"; # busser (toggle on/off by jumper), same as "8I/Os_2_6
 ### 
 
 #Port 8I/Os_1
-NET "8I/Os_1_1"  LOC = "p75";
-NET "8I/Os_1_2"  LOC = "p76";
-NET "8I/Os_1_3"  LOC = "p69";
-NET "8I/Os_1_4"  LOC = "p74";
-NET "8I/Os_1_5"  LOC = "p64"; # same as "LCD12864_K"
-NET "8I/Os_1_6"  LOC = "p65"; # same as "LCD12864_A"
-NET "8I/Os_1_7"  LOC = "p62";
-NET "8I/Os_1_8"  LOC = "p63"; # same as "LCD12864_RST"
+NET "SETUP<0>"  LOC = "p75";
+NET "SETUP<1>"  LOC = "p76";
+NET "SETUP<2>"  LOC = "p69";
+NET "SETUP<3>"  LOC = "p74";
+NET "SEC"  LOC = "p64"; # same as "LCD12864_K"
+NET "TIM"  LOC = "p65"; # same as "LCD12864_A"
+NET "START"  LOC = "p62";
+NET "STOP"  LOC = "p63"; # same as "LCD12864_RST"
 
 #16I/Os_2
-NET "16I/Os_2_01"  LOC = "p119"; # same as "joystick-left"
-NET "16I/Os_2_02"  LOC = "p116"; # same as "joystick-down"
-NET "16I/Os_2_03"  LOC = "p115"; # same as "joystick-press"
-NET "16I/Os_2_04"  LOC = "p113";
-NET "16I/Os_2_05"  LOC = "p112";
-NET "16I/Os_2_06"  LOC = "p109";
-NET "16I/Os_2_07"  LOC = "p108";
-NET "16I/Os_2_08"  LOC = "p107";
-NET "16I/Os_2_09"  LOC = "p106";
-NET "16I/Os_2_10"  LOC = "p102";
-NET "16I/Os_2_11"  LOC = "p100";
-NET "16I/Os_2_12"  LOC = "p99";
-NET "16I/Os_2_13"  LOC = "p98";
-NET "16I/Os_2_14"  LOC = "p97";
-NET "16I/Os_2_15"  LOC = "p96";
-NET "16I/Os_2_16"  LOC = "p94";
+NET "DIGIT<0>"  LOC = "p119"; # same as "joystick-left"
+NET "SEGM<0>"  LOC = "p116"; # same as "joystick-down"
+NET "DIGIT<1>"  LOC = "p115"; # same as "joystick-press"
+NET "SEGM<1>"  LOC = "p113";
+NET "DIGIT<2>"  LOC = "p112";
+NET "SEGM<2>"  LOC = "p109";
+NET "DIGIT<3>"  LOC = "p108";
+NET "SEGM<3>"  LOC = "p107";
+NET "DIGIT<4>"  LOC = "p106";
+#NET "points"  LOC = "p102";
+NET "DIGIT<5>"  LOC = "p100";
+#NET "16I/Os_2_12"  LOC = "p99";
+NET "DIGIT<6>"  LOC = "p98";
+#NET "16I/Os_2_14"  LOC = "p97";
+NET "DIGIT<7>"  LOC = "p96";
+#NET "16I/Os_2_16"  LOC = "p94";
