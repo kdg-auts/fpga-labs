@@ -35,22 +35,38 @@ architecture LW3_SEC_TIM_ARCH of LW3_SEC_TIM is
 	signal S_H_s : STD_LOGIC_VECTOR (3 downto 0);
 	signal M_L_s : STD_LOGIC_VECTOR (3 downto 0);
 	signal M_H_s : STD_LOGIC_VECTOR (3 downto 0);
+	signal DIGIT_s : STD_LOGIC_VECTOR (7 downto 0);
 	signal CH_D_s: STD_LOGIC;
 	signal EN_s: STD_LOGIC;
 	signal BUZZ_s: STD_LOGIC;
 	signal RST_s: STD_LOGIC;
+	signal SEC_s: STD_LOGIC;
+	signal TIM_s: STD_LOGIC;
+	signal START_s: STD_LOGIC;
+	signal STOP_s: STD_LOGIC;
+	signal SETUP_s : STD_LOGIC_VECTOR (3 downto 0);
 	signal BUZZ_out_s: STD_LOGIC;
+	signal SEC_LED_s: STD_LOGIC;
+	signal TIM_LED_s: STD_LOGIC;
 
 begin
 	
 	-- signals with inversion
 	RST_s <= not RST;
+	SEC_s <= not SEC;
+	TIM_s <= not TIM;
+	START_s <= not START;
+	STOP_s <= not STOP;
+	SETUP_s <= not SETUP;
 	BUZZ <= not BUZZ_out_s;
+	SEC_LED <= not SEC_LED_s;
+	TIM_LED <= not TIM_LED_s;
+	DIGIT <= not DIGIT_s;
 	
 	clk_divider: entity work.clk_divider 
 	generic map(
 		TICK_COUNT_EN_g => 50000000, -- 50M pulses with 50MHz = 1 sec
-		TICK_COUNT_CH_g => 2000000 -- 2M pulses with 50MHz = 1/25 sec
+		TICK_COUNT_CH_g => 500000 -- 0,5M pulses with 50MHz = 0,01 sec
 	)
 	port map(
 		CLK => CLK,
@@ -65,20 +81,20 @@ begin
 		RST => RST_s,
 		EN => CH_D_s,
 		TIC => EN_s,
-		SEC => SEC,
-		TIM => TIM,
-		START => START,
-		STOP => STOP,
-		SETUP => SETUP,
+		SEC => SEC_s,
+		TIM => TIM_s,
+		START => START_s,
+		STOP => STOP_s,
+		SETUP => SETUP_s,
 		BUZZ => BUZZ_s,
-		SEC_M => SEC_LED,
-		TIM_M => TIM_LED,
+		SEC_M => SEC_LED_s,
+		TIM_M => TIM_LED_s,
 		M_H => M_H_s,
 		M_L => M_L_s,
 		S_H => S_H_s,
 		S_L => S_L_s
 	);
-
+	
 	IND_DRV: entity work.IND_DRV
 	port map(
 		DIG1 => S_L_s,
@@ -89,7 +105,7 @@ begin
 		CLK => CLK,
 		EN => CH_D_s,
 		CH_SEG => CH_D_s,
-		DIGIT  => DIGIT,
+		DIGIT  => DIGIT_s,
 		CONTROL => SEGM
 	);
 

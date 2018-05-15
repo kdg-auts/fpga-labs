@@ -67,10 +67,10 @@ begin
 								dig3_s when seg_select_s = "10" else
 								dig4_s;
 	SEG_SEL:
-		CONTROL <= "0001" when seg_select_s = "00" else
-					  "0010" when seg_select_s = "01" else
-					  "0100" when seg_select_s = "10" else
-					  "1000";
+		CONTROL <= "1000" when seg_select_s = "00" else
+					  "0100" when seg_select_s = "01" else
+					  "0010" when seg_select_s = "10" else
+					  "0001";
 
 	HEX_TO_LED:
 		DIGIT <=  "00111111" when selected_dig_s = "0000" else
@@ -82,6 +82,7 @@ begin
 					 "01111101" when selected_dig_s = "0110" else
 					 "00000111" when selected_dig_s = "0111" else
 					 "01111111" when selected_dig_s = "1000" else
+					 "01101111" when selected_dig_s = "1001" else
 					 "01000000";
 
 
