@@ -18,6 +18,7 @@ entity LW1_RUNNING_LED is
 end LW1_RUNNING_LED;
 
 architecture Behavioral of LW1_RUNNING_LED is
+	-- clock divider to get the time interval needed
 	component clk_divider is
 		generic (
 			TICK_COUNT : integer
@@ -36,6 +37,7 @@ begin
 	
 	rst_s <= not RST;
 	
+	-- clock divider
 	CLK_DIV: clk_divider
 	generic map (
 		TICK_COUNT => TICK_COUNT
@@ -46,6 +48,7 @@ begin
 		EN => en_s
 	);
 	
+	-- LED driving module
 	LED_DRW: entity work.led_driver
 	port map (
 		CLK => CLK,
