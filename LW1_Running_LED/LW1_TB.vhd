@@ -64,6 +64,10 @@ begin
 		RST <= '0';
 		wait for 100 ns;	
 		RST <= '1';
+		wait for 16 us;
+		RST <= '0';
+		wait for 100 ns;	
+		RST <= '1';
 		-- insert other stimulus here 
 	wait;
 	end process;
